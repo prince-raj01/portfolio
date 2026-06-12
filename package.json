@@ -1,0 +1,14 @@
+{
+  "name": "prince-project",
+  "version": "1.0.0",
+  "description": "Portfolio and resume site for Prince Raj",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server",
+    "serve": "npx http-server",
+    "preview": "npx http-server"
+  },
+  "keywords": ["portfolio", "resume", "web", "static"],
+  "author": "Prince Raj",
+  "license": "MIT"
+}
