@@ -14,7 +14,47 @@ const projects = [
     description:
       'Disease Risk Prediction System using Machine Learning. Predicts Diabetes & Heart Disease risk from clinical data.',
     tech: ['Next.js', 'Python', 'Random Forest Classifier'],
-    link: ''
+    link: 'https://github.com/Swarnimrajsanu/HealthguardAi'
+  },
+  {
+    emoji: '💊',
+    title: 'Medi-Sync',
+    description:
+      'Healthcare management platform that keeps patient records, medications, and appointments in sync for better care coordination.',
+    tech: ['JavaScript', 'Web Development'],
+    link: 'https://github.com/Swarnimrajsanu/Medi-Sync'
+  },
+  {
+    emoji: '🚑',
+    title: 'SurgeCare',
+    description:
+      'Emergency care solution built at the Sristhi Hackathon to help hospitals manage patient surges and respond faster in critical situations.',
+    tech: ['Hackathon Project', 'Web Development'],
+    link: 'https://github.com/Swarnimrajsanu/surgecare-sristhi-hackathon'
+  },
+  {
+    emoji: '🌱',
+    title: 'EcoSmart',
+    description:
+      'Sustainability-focused solution built at the EcoSmart Hackathon, promoting smarter, eco-friendly choices through technology.',
+    tech: ['Hackathon Project', 'Web Development'],
+    link: 'https://github.com/Swarnimrajsanu/ecosmart-hackathon'
+  },
+  {
+    emoji: '🦖',
+    title: 'Hackzilla Project',
+    description:
+      'Built in 24 hours at Hackzilla (KPR Institute of Engineering and Technology) — a working prototype designed, developed, and demoed within a single day.',
+    tech: ['Hackathon Project', '24-Hour Build'],
+    link: 'https://github.com/Swarnimrajsanu/hackazilla'
+  },
+  {
+    emoji: '⚡',
+    title: 'HackSpark Project',
+    description:
+      'Built in 8 hours at HackSpark 2025 (Sri Venkateshwara College of Engineering) — a rapid prototype solving a real-world problem under tight deadlines.',
+    tech: ['Hackathon Project', '8-Hour Build'],
+    link: 'https://github.com/Swarnimrajsanu/hackspark03'
   }
   // Add more projects here, e.g.:
   // { emoji: '🌐', title: 'My App', description: '...', tech: ['Flask'], link: 'https://...' }
