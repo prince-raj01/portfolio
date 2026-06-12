@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prince Raj | Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f172a;
+      --muted: #475569;
+      --accent: #0284c7;
+      --accent-2: #6366f1;
+      --line: #e2e8f0;
+      --chip-bg: #eff6ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f1f5f9;
+      color: var(--ink);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .toolbar {
+      max-width: 820px;
+      margin: 0 auto 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .toolbar a, .toolbar button {
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+    }
+
+    .back-btn { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+
+    .print-btn {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3);
+    }
+
+    .resume {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.12);
+      overflow: hidden;
+    }
+
+    /* Header */
+    .res-header {
+      background: linear-gradient(120deg, #0f172a, #1e3a8a);
+      color: #fff;
+      padding: 2.25rem 2.5rem;
+    }
+
+    .res-header h1 { font-size: 2.2rem; font-weight: 800; }
+
+    .res-header .role { color: #93c5fd; font-weight: 600; margin-top: 0.15rem; }
+
+    .res-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    .res-contact a { color: #cbd5e1; text-decoration: none; }
+    .res-contact a:hover { color: #fff; }
+
+    /* Body */
+    .res-body { padding: 2rem 2.5rem; }
+
+    .res-section { margin-bottom: 1.75rem; }
+
+    .res-section h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent);
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .res-section p, .res-section li { font-size: 0.92rem; color: var(--muted); }
+
+    .summary strong { color: var(--ink); }
+
+    /* Education */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .edu-row h3 { font-size: 1rem; }
+
+    .edu-row .where { font-size: 0.9rem; color: var(--muted); }
+
+    .edu-row .when { font-size: 0.85rem; color: var(--accent); font-weight: 600; white-space: nowrap; }
+
+    /* Skills */
+    .skill-row { display: flex; gap: 0.75rem; margin-bottom: 0.6rem; flex-wrap: wrap; align-items: baseline; }
+
+    .skill-row .label { font-weight: 600; font-size: 0.9rem; min-width: 130px; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    .chip {
+      background: var(--chip-bg);
+      color: var(--accent);
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      padding: 0.15rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    /* Projects */
+    .proj h3 { font-size: 1rem; }
+
+    .proj .tech { font-size: 0.8rem; color: var(--accent-2); font-weight: 600; margin-bottom: 0.3rem; }
+
+    .proj ul { padding-left: 1.2rem; margin-top: 0.3rem; }
+
+    .proj li { margin-bottom: 0.2rem; }
+
+    /* Two column lists */
+    .cols-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem 2rem;
+      padding-left: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .res-header, .res-body { padding: 1.5rem; }
+      .cols-2 { grid-template-columns: 1fr; }
+    }
+
+    /* Print = clean PDF */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .toolbar { display: none; }
+      .resume { box-shadow: none; border-radius: 0; max-width: 100%; }
+      .res-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <a class="back-btn" href="index.html">← Back to Portfolio</a>
+    <button class="print-btn" onclick="window.print()">📄 Download as PDF</button>
+  </div>
+
+  <main class="resume">
+    <header class="res-header">
+      <h1>Prince Raj</h1>
+      <p class="role">B.E Computer Science Student · Machine Learning &amp; Web Development</p>
+      <div class="res-contact">
+        <span>📍 Bangalore, India</span>
+        <a href="mailto:princeraj960897@gmail.com">📧 princeraj960897@gmail.com</a>
+        <a href="https://www.linkedin.com/in/prince-raj-984979360" target="_blank" rel="noopener">💼 linkedin.com/in/prince-raj-984979360</a>
+      </div>
+    </header>
+
+    <div class="res-body">
+      <section class="res-section summary">
+        <h2>Summary</h2>
+        <p>
+          Motivated <strong>Computer Science undergraduate at SKIT Bangalore</strong> with a passion for
+          <strong>Machine Learning</strong> and <strong>Web Development</strong>. Hands-on experience building
+          full-stack, ML-powered applications that solve real-world problems. Currently deepening expertise in
+          <strong>Python, ML, and Full Stack Development</strong>, with a strong drive to learn fast and ship
+          working products.
+        </p>
+      </section>
+
+      <section class="res-section">
+        <h2>Education</h2>
+        <div class="edu-row">
+          <div>
+            <h3>B.E in Computer Science &amp; Engineering</h3>
+            <p class="where">Sri Krishna Institute of Technology (SKIT), Bangalore</p>
+          </div>
+          <span class="when">Pursuing</span>
+        </div>
+      </section>
+
+      <section class="res-section">
+        <h2>Skills</h2>
+        <div class="skill-row">
+          <span class="label">💻 Languages</span>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="label">⚙️ Frameworks</span>
+          <div class="chips">
+            <span class="chip">Flask</span><span class="chip">React</span><span class="chip">Next.js</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="label">🤖 ML / AI</span>
+          <div class="chips">
+            <span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="label">🛢️ Tools</span>
+          <div class="chips">
+            <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="res-section proj">
+        <h2>Projects</h2>
+        <h3>🏥 HealthGuard AI — Disease Risk Prediction System</h3>
+        <p class="tech">Next.js · Python · Random Forest Classifier</p>
+        <ul>
+          <li>Built an ML-powered web application that predicts <strong>Diabetes</strong> and <strong>Heart Disease</strong> risk from clinical data.</li>
+          <li>Trained and tuned a <strong>Random Forest Classifier</strong> using Scikit-learn, Pandas, and NumPy for reliable predictions.</li>
+          <li>Designed a responsive <strong>Next.js</strong> frontend integrated with a Python backend for real-time risk assessment.</li>
+        </ul>
+      </section>
+
+      <section class="res-section">
+        <h2>Strengths</h2>
+        <ul class="cols-2">
+          <li>Fast, self-driven learner</li>
+          <li>Problem-solving mindset</li>
+          <li>Building end-to-end products</li>
+          <li>Team collaboration with Git/GitHub</li>
+        </ul>
+      </section>
+
+      <section class="res-section">
+        <h2>Currently Learning</h2>
+        <div class="chips">
+          <span class="chip">🐍 Advanced Python</span>
+          <span class="chip">🤖 Machine Learning</span>
+          <span class="chip">🌐 Full Stack Development</span>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
