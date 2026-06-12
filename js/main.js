@@ -138,15 +138,14 @@ const hackathonsGrid = document.getElementById('hackathonsGrid');
 hackathons.forEach(({ emoji, title, duration, venue, certificate }) => {
   const card = document.createElement('div');
   card.className = 'project-card reveal';
-  const titleClass = certificate ? 'cert-link' : '';
-  const titleOnClick = certificate ? `onclick="openCertificate('${title}', '${certificate}')"` : '';
   card.innerHTML = `
     <span class="project-emoji">${emoji}</span>
-    <h3 class="${titleClass}" ${titleOnClick}>${title}</h3>
+    <h3>${title}</h3>
     <p>${venue}</p>
     <div class="project-tech">
       <span class="tech-tag">⏱️ ${duration}</span>
-    </div>`;
+    </div>
+    ${certificate ? `<button class="btn btn-outline" onclick="openCertificate('${title}', '${certificate}')">🏆 View Certificate</button>` : ''}`;
   hackathonsGrid.appendChild(card);
 });
 
