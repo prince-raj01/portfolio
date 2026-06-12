@@ -5,6 +5,7 @@ pages:
     - mkdir -p public
     - cp index.html resume.html public/
     - cp -r css js public/
+    - if [ -d assets ]; then cp -r assets public/; fi
   artifacts:
     paths:
       - public
