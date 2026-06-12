@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prince Raj | Portfolio</title>
+  <meta name="description" content="Portfolio of Prince Raj - B.E Computer Science Student at SKIT Bangalore. Machine Learning & Web Development enthusiast." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="#home" class="logo">&lt;Prince<span>Raj</span>/&gt;</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button id="hamburger" class="hamburger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero">
+    <div class="container hero-content">
+      <p class="hero-hello">👋 Hi there, I'm</p>
+      <h1 class="hero-name">Prince <span class="accent">Raj</span></h1>
+      <h2 class="hero-tagline"><span id="typed"></span><span class="cursor">|</span></h2>
+      <p class="hero-sub">🎓 B.E Computer Science Student at <strong>SKIT Bangalore</strong></p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">🚀 View My Work</a>
+        <a href="#contact" class="btn btn-outline">📫 Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">💻 About Me</h2>
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <p>🎓 B.E Computer Science Student at <strong>SKIT Bangalore</strong></p>
+          <p>💻 Passionate about <strong>Machine Learning</strong> &amp; <strong>Web Development</strong></p>
+          <p>🌱 Currently learning <strong>Python, ML and Full Stack Development</strong></p>
+          <p>🚀 Building real-world projects that solve real problems</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title reveal">🛠️ Skills &amp; Technologies</h2>
+      <div id="skillsGrid" class="skills-grid"></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title reveal">🚀 My Projects</h2>
+      <div id="projectsGrid" class="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title reveal">📫 Connect With Me</h2>
+      <div class="contact-cards reveal">
+        <a href="mailto:princeraj960897@gmail.com" class="contact-card">
+          <span class="contact-icon">📧</span>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">princeraj960897@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/prince-raj-984979360" target="_blank" rel="noopener" class="contact-card">
+          <span class="contact-icon">💼</span>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">Prince Raj</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Made with ❤️ by Prince Raj · © <span id="year"></span></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
