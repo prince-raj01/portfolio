@@ -20,6 +20,39 @@ const projects = [
   // { emoji: '🌐', title: 'My App', description: '...', tech: ['Flask'], link: 'https://...' }
 ];
 
+const hackathons = [
+  {
+    emoji: '⚡',
+    title: 'HackSpark 2025',
+    duration: '8-Hour Hackathon',
+    venue: 'Sri Venkateshwara College of Engineering'
+  },
+  {
+    emoji: '💡',
+    title: 'AAVISHKAR',
+    duration: '8-Hour Hackathon',
+    venue: 'Dayananda Sagar Academy of Technology and Management'
+  },
+  {
+    emoji: '🌆',
+    title: 'Build for Bengaluru',
+    duration: '12-Hour Hackathon',
+    venue: 'Sri Krishna Institute of Technology'
+  },
+  {
+    emoji: '🎉',
+    title: 'Tech Habba 2025',
+    duration: 'Big Hack Event',
+    venue: 'Acharya Institutes'
+  },
+  {
+    emoji: '🦖',
+    title: 'Hackzilla',
+    duration: '24-Hour Hackathon',
+    venue: 'KPR Institute of Engineering and Technology'
+  }
+];
+
 const typedPhrases = [
   'Machine Learning Enthusiast 🤖',
   'Web Developer 🌐',
@@ -54,6 +87,21 @@ projects.forEach(({ emoji, title, description, tech, link }) => {
     </div>
     ${link ? `<a class="btn btn-outline" href="${link}" target="_blank" rel="noopener">🔗 View Project</a>` : ''}`;
   projectsGrid.appendChild(card);
+});
+
+// ===== Render hackathons =====
+const hackathonsGrid = document.getElementById('hackathonsGrid');
+hackathons.forEach(({ emoji, title, duration, venue }) => {
+  const card = document.createElement('div');
+  card.className = 'project-card reveal';
+  card.innerHTML = `
+    <span class="project-emoji">${emoji}</span>
+    <h3>${title}</h3>
+    <p>${venue}</p>
+    <div class="project-tech">
+      <span class="tech-tag">⏱️ ${duration}</span>
+    </div>`;
+  hackathonsGrid.appendChild(card);
 });
 
 // ===== Typing effect =====
