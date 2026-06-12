@@ -6,6 +6,7 @@
   <title>Prince Raj | Resume</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>
     :root {
       --ink: #0f172a;
@@ -172,8 +173,22 @@
 <body>
   <div class="toolbar">
     <a class="back-btn" href="index.html">← Back to Portfolio</a>
-    <button class="print-btn" onclick="window.print()">📄 Download as PDF</button>
+    <button class="print-btn" onclick="downloadPDF()">📄 Download as PDF</button>
   </div>
+
+  <script>
+    function downloadPDF() {
+      const element = document.querySelector('.resume');
+      const opt = {
+        margin: 10,
+        filename: 'Prince_Raj_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
 
   <main class="resume">
     <header class="res-header">
