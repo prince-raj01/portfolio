@@ -123,6 +123,49 @@
     <p>Made with ❤️ by Prince Raj · © <span id="year"></span></p>
   </footer>
 
+  <!-- Certificate Modal -->
+  <div id="certModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="certTitle">Certificate</h2>
+        <button class="close-btn" onclick="closeCertificate()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img id="certImage" src="" alt="Certificate" />
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
+  <script>
+    function openCertificate(title, imagePath) {
+      const modal = document.getElementById('certModal');
+      const img = document.getElementById('certImage');
+      const titleEl = document.getElementById('certTitle');
+      titleEl.textContent = title + ' - Certificate';
+      img.src = imagePath;
+      modal.style.display = 'block';
+    }
+
+    function closeCertificate() {
+      const modal = document.getElementById('certModal');
+      modal.style.display = 'none';
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('certModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeCertificate();
+      }
+    });
+  </script>
 </body>
 </html>
