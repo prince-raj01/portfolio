@@ -10,3 +10,5 @@ All skills, projects, and typing phrases live in `js/main.js` as simple arrays. 
 
 The site auto-deploys to **GitLab Pages** on every push to `main` via `.gitlab-ci.yml`.
 Find your live URL under **Deploy → Pages** in the project sidebar.
+
+_Last deployed: 2026-06-12_
