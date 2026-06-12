@@ -168,6 +168,75 @@
       .res-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
+
+    /* Certificate Modal */
+    .cert-link { cursor: pointer; text-decoration: underline dotted; color: var(--accent); }
+    .cert-link:hover { color: var(--accent-2); font-weight: 600; }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.9);
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-content {
+      background: #fff;
+      margin: 5% auto;
+      padding: 0;
+      border-radius: 10px;
+      max-width: 90%;
+      max-height: 80vh;
+      overflow: auto;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.3);
+    }
+
+    .modal-header {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #fff;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .modal-header h2 { margin: 0; font-size: 1.3rem; }
+
+    .close-btn {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close-btn:hover { transform: scale(1.2); }
+
+    .modal-body { padding: 1.5rem; text-align: center; }
+
+    .modal-body img { max-width: 100%; height: auto; border-radius: 8px; }
+
+    @media print {
+      .modal { display: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -290,7 +359,7 @@
       <section class="res-section">
         <h2>Hackathons</h2>
         <ul style="padding-left: 1.2rem;">
-          <li>⚡ <strong>HackSpark 2025</strong> (8-Hour Hackathon) — Sri Venkateshwara College of Engineering</li>
+          <li>⚡ <strong><span class="cert-link" onclick="openCertificate('HackSpark 2025', 'certificates/hackspark-2025.jpeg')">HackSpark 2025</span></strong> (8-Hour Hackathon) — Sri Venkateshwara College of Engineering</li>
           <li>💡 <strong>AAVISHKAR</strong> (8-Hour Hackathon) — Dayananda Sagar Academy of Technology and Management</li>
           <li>🌆 <strong>Build for Bengaluru</strong> (12-Hour Hackathon) — Sri Krishna Institute of Technology</li>
           <li>🎉 <strong>Tech Habba 2025</strong> (Big Hack Event) — Acharya Institutes</li>
@@ -319,5 +388,49 @@
       </section>
     </div>
   </main>
+
+  <!-- Certificate Modal -->
+  <div id="certModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="certTitle">Certificate</h2>
+        <button class="close-btn" onclick="closeCertificate()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img id="certImage" src="" alt="Certificate" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openCertificate(title, imagePath) {
+      const modal = document.getElementById('certModal');
+      const img = document.getElementById('certImage');
+      const titleEl = document.getElementById('certTitle');
+      titleEl.textContent = title + ' - Certificate';
+      img.src = imagePath;
+      modal.style.display = 'block';
+    }
+
+    function closeCertificate() {
+      const modal = document.getElementById('certModal');
+      modal.style.display = 'none';
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('certModal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeCertificate();
+      }
+    });
+  </script>
 </body>
 </html>
