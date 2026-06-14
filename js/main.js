@@ -93,7 +93,17 @@ const hackathons = [
     emoji: '🦖',
     title: 'Hackzilla',
     duration: '24-Hour Hackathon',
-    venue: 'KPR Institute of Engineering and Technology'
+    venue: 'KPR Institute of Engineering and Technology',
+    certificate: 'certificates/hackzilla-certificate.jpg'
+  },
+  {
+    emoji: '🎨',
+    title: 'Adobe India Hackathon by Adobe',
+    duration: 'Participate & Win',
+    venue: 'Unstop (Online)',
+    description: 'Adobe-run online hackathon on Unstop — uncover exciting rewards by building creative and technical prototypes.',
+    certificate: 'https://d8it4huxumps7.cloudfront.net/lambda-pdfs/certificate-images/016f4094-19ec-4967-9222-86e518d1de73.jpg',
+    link: 'https://unstop.com/o/oDTg1KU?lb=hfQ86Jlu&utm_medium=Share&utm_source=WhatsApp'
   }
 ];
 
@@ -135,13 +145,14 @@ projects.forEach(({ emoji, title, description, tech, link }) => {
 
 // ===== Render hackathons =====
 const hackathonsGrid = document.getElementById('hackathonsGrid');
-hackathons.forEach(({ emoji, title, duration, venue, certificate }) => {
+hackathons.forEach(({ emoji, title, duration, venue, description, certificate }) => {
   const card = document.createElement('div');
   card.className = 'project-card reveal';
   card.innerHTML = `
     <span class="project-emoji">${emoji}</span>
     <h3>${title}</h3>
     <p>${venue}</p>
+    ${description ? `<p>${description}</p>` : ''}
     <div class="project-tech">
       <span class="tech-tag">⏱️ ${duration}</span>
     </div>
